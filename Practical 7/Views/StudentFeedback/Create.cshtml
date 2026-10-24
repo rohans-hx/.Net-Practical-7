@@ -1,0 +1,44 @@
+﻿@model Practical_7.Models.Feedback
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <h2>Student Feedback Form</h2>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(v => v.EnrollmentNo)
+            @Html.EditorFor(v => v.EnrollmentNo)
+            <br />
+
+            @Html.LabelFor(v => v.Name)
+            @Html.EditorFor(v => v.Name)
+            <br />
+
+            @Html.LabelFor(v => v.Subject)
+            @Html.EditorFor(v => v.Subject)
+            <br />
+
+            @Html.LabelFor(v => v.Rating)
+            @Html.EditorFor(v => v.Rating)
+            <br />
+
+            @Html.LabelFor(v => v.Comments)
+            @Html.TextAreaFor(v => v.Comments)
+            <br />
+        </div>
+
+        <input type="submit" value="Submit Feedback" />
+    }
+    @Html.ActionLink("Back to Home", "Index", "StudentFeedback")
+
+</body>
+</html>
